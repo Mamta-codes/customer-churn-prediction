@@ -2,46 +2,60 @@
 
 ## Project Overview
 
-This project focuses on predicting whether a customer is likely to churn (leave the company) using machine learning techniques.
+This project focuses on predicting customer churn using machine learning techniques. Customer churn refers to customers who stop using a service, and predicting it helps businesses take proactive steps to retain them.
 
-The project includes data cleaning, exploratory data analysis (EDA), feature preprocessing, machine learning model training, model evaluation, feature importance analysis, and customer churn prediction.
+The dataset contains customer demographic details, service usage information, and account-related features. The goal is to analyze this data, identify key factors influencing churn, and build a predictive model that can classify whether a customer is likely to churn or not.
 
-The final model can be used to predict whether an individual customer is likely to churn or stay with the company.
+The project includes data preprocessing, exploratory data analysis (EDA), feature engineering, model training, evaluation, and interpretation of results to generate actionable business insights.
+
+Customer churn is one of the biggest challenges for businesses because losing customers directly impacts revenue and growth.
+
+This project focuses on building a **Machine Learning model to predict whether a customer is likely to churn or stay**. The project includes complete data analysis, data preprocessing, exploratory data analysis (EDA), machine learning model development, model evaluation, feature importance analysis, and customer churn prediction.
+
+The final model helps identify customers who are at risk of leaving and provides insights that can support customer retention strategies.
 
 ---
 
-## Project Goal
+## Project Objectives
 
-The main goal of this project is to:
+The main objectives of this project are:
 
 * Analyze customer churn patterns.
-* Identify factors associated with customer churn.
-* Build machine learning models to predict customer churn.
-* Compare the performance of different machine learning algorithms.
+* Identify important factors affecting customer churn.
+* Perform data cleaning and preprocessing.
+* Build and compare multiple machine learning models.
+* Evaluate model performance using different metrics.
 * Select the best-performing model.
-* Save and load the trained model for future predictions.
+* Save the trained model for future predictions.
 
 ---
 
-## Dataset
+# Dataset
 
-The dataset contains customer information and service details, including:
+The dataset contains customer information related to demographics, services, and billing details.
+
+### Dataset Features Include:
 
 * Customer demographics
-* Contract information
+* Gender
+* Senior citizen status
+* Partner and dependents information
+* Contract type
 * Internet and phone services
 * Online security and support services
-* Monthly and total charges
-* Customer tenure
-* Churn status
+* Payment methods
+* Monthly charges
+* Total charges
+* Customer churn status
 
-The dataset contains **7,043 customer records and 33 columns** before data cleaning.
+### Dataset Information:
 
-After removing rows with missing `Total Charges` values, the final dataset contained **7,032 customer records** for machine learning.
+* Original dataset: **7,043 rows × 33 columns**
+* After cleaning: **7,032 rows used for machine learning**
 
 ---
 
-## Technologies Used
+# Technologies Used
 
 * Python
 * Pandas
@@ -54,82 +68,106 @@ After removing rows with missing `Total Charges` values, the final dataset conta
 
 ---
 
-## Data Cleaning and Preprocessing
+# Data Cleaning & Preprocessing
 
 The following preprocessing steps were performed:
 
 * Loaded and explored the dataset.
-* Checked dataset shape, columns, data types, and summary statistics.
-* Checked for missing values.
-* Checked for duplicate records.
-* Converted `Total Charges` into a numeric data type.
-* Removed 11 rows with missing `Total Charges` values.
-* Removed unnecessary columns that could cause data leakage or were not required for prediction.
-* Separated the target variable (`Churn Label`) from the input features.
+* Checked dataset structure and statistics.
+* Checked missing values and duplicates.
+* Converted `Total Charges` into numeric format.
+* Removed rows containing missing values.
+* Removed unnecessary columns.
+* Separated features and target variable.
 * Applied One-Hot Encoding to categorical variables.
-* Split the dataset into training and testing sets.
+* Split data into training and testing datasets.
 
-### Machine Learning Dataset
+### Machine Learning Data Preparation
 
 ```text
 Original Dataset
 7032 × 33
-       ↓
+
+        ↓
+
 Remove unnecessary columns
-       ↓
-Separate Target Variable
-       ↓
+
+        ↓
+
+Separate Target Variable (Churn)
+
+        ↓
+
 One-Hot Encoding
-       ↓
+
+        ↓
+
 Train-Test Split
-       ↓
-Train: 5625 samples
-Test: 1407 samples
+
+        ↓
+
+Training Data: 5625 samples
+Testing Data: 1407 samples
 ```
 
 ---
 
-## Exploratory Data Analysis
+# Exploratory Data Analysis (EDA)
 
-Exploratory Data Analysis was performed to understand customer churn patterns.
+EDA was performed to understand customer behavior and churn patterns.
 
-The analysis included:
+Analysis included:
 
 * Overall churn distribution.
-* Churn percentage.
-* Churn based on gender.
-* Churn based on senior citizen status.
-* Analysis of customer service and subscription-related factors.
-* Feature importance analysis.
+* Churn percentage analysis.
+* Churn based on contract type.
+* Churn based on internet service.
+* Churn based on payment method.
+* Customer service analysis.
+* Correlation analysis.
 
-Overall churn distribution:
+### Churn Distribution
 
-* **Customers who did not churn: 73.42%**
-* **Customers who churned: 26.58%**
-
----
-
-## Machine Learning Models
-
-The following machine learning models were trained and evaluated:
-
-### 1. Logistic Regression
-
-Accuracy: **80.67%**
-
-### 2. Random Forest Classifier
-
-Accuracy: **79.82%**
-
-### 3. Decision Tree Classifier
-
-Accuracy: **74% approximately**
-
-Logistic Regression achieved the highest accuracy among the tested models and was selected as the final model.
+* Customers who stayed: **73.42%**
+* Customers who churned: **26.58%**
 
 ---
 
-## Model Evaluation
+# Machine Learning Models
+
+Three classification models were trained and evaluated:
+
+## 1. Logistic Regression
+
+Accuracy:
+
+**80.67%**
+
+---
+
+## 2. Random Forest Classifier
+
+Accuracy:
+
+**79.82%**
+
+---
+
+## 3. Decision Tree Classifier
+
+Accuracy:
+
+**Approximately 74%**
+
+---
+
+## Best Performing Model
+
+Among all tested models, **Logistic Regression achieved the highest accuracy (80.67%)** and was selected as the final model.
+
+---
+
+# Model Evaluation
 
 The models were evaluated using:
 
@@ -140,130 +178,144 @@ The models were evaluated using:
 * Confusion Matrix
 * Classification Report
 
-The Logistic Regression model achieved an overall accuracy of approximately **80.67%** on the test dataset.
-
-The model's performance on the churn class (`Yes`) was also evaluated using precision, recall, and F1-score to understand how effectively the model identifies customers who are likely to churn.
+The evaluation helped understand how effectively the model predicts customers who are likely to churn.
 
 ---
 
-## Key Insights
+# Feature Importance Analysis
 
-### 1. Overall Customer Churn
+The model identified important factors influencing customer churn.
 
-26.58% of customers have churned, while 73.42% have remained with the company. This indicates that approximately one-fourth of the customer base is at risk of churn.
+Top important features include:
 
-### 2. Contract Type
-
-Contract type is an important factor in churn prediction. Customers with one-year and two-year contracts show a lower tendency to churn compared with customers on month-to-month contracts.
-
-### 3. Dependents
-
-Customers with dependents show a lower tendency to churn according to the Logistic Regression model.
-
-### 4. Internet Service
-
-Fiber optic internet service is associated with a higher churn tendency in the model, making it a factor that may require further investigation.
-
-### 5. Online Security and Tech Support
-
-Customers with Online Security and Tech Support show a lower tendency to churn, suggesting that additional support and security services may contribute to better customer retention.
-
-### 6. Model Performance
-
-Among the tested machine learning models, Logistic Regression achieved the highest accuracy of approximately 80.67% and was selected as the final model.
-
-### 7. Final Prediction System
-
-The trained Logistic Regression model was successfully saved using Joblib and loaded again to make predictions for individual customers.
+* Dependents status
+* Contract type
+* Fiber optic internet service
+* Online Security
+* Tech Support
+* Payment Method
+* Phone Service
+* Paperless Billing
 
 ---
 
-## Visualizations
+# Final Business Insights
 
-The project includes visualizations to understand customer churn patterns and important factors influencing churn prediction.
+Detailed analysis and business recommendations are available here:
 
-The visualizations are stored in the `visualizations` folder.
+➡️ [View Final Business Insights](final_insights.md)
 
-Key visualizations include:
+Main findings:
 
-* Customer churn distribution.
-* Churn analysis by customer characteristics.
-* Churn analysis by service-related factors.
-* Top 10 feature importance visualization.
+* Around one-fourth of customers are at risk of churn.
+* Long-term contracts reduce churn probability.
+* Customers with support services show better retention.
+* Fiber optic customers require further investigation due to higher churn tendency.
+* Customer retention strategies should focus on high-risk customers.
 
 ---
 
-## Model Prediction
+# Model Prediction
 
-The trained Logistic Regression model can be loaded using Joblib and used to predict whether a customer is likely to churn.
+The trained Logistic Regression model was saved using Joblib and used for future predictions.
 
-Example prediction:
+Example:
 
 ```text
 Customer Churn Prediction: No
+
 Actual Churn: No
 ```
 
-The prediction was correctly classified for the tested customer.
+The model successfully predicted customer churn status for test customers.
 
 ---
 
-## How to Run the Project
+# Visualizations
 
-### 1. Clone the Repository
+All generated graphs are stored inside the `visualizations` folder.
 
-Clone this repository to your local machine.
+Visualizations include:
+
+* Churn distribution
+* Contract vs churn analysis
+* Internet service analysis
+* Tenure analysis
+* Payment method analysis
+* Correlation heatmap
+* Confusion matrix
+* Feature importance visualization
+
+---
+
+# Project Structure
+
+```text
+customer-churn-prediction
+│
+├── churn_prediction.py
+├── README.md
+├── final_insights.md
+├── churn_model.pkl
+├── Telco_customer_churn.xlsx
+│
+└── visualizations
+    │
+    ├── graph01_churn_distribution.png
+    ├── graph02_contract_vs_churn.png
+    ├── graph03_internet_service_vs_churn.png
+    ├── graph04_tenure_vs_churn.png
+    ├── graph05_monthly_charges_vs_churn.png
+    ├── graph06_payment_method_vs_churn.png
+    ├── graph07_senior_citizen_vs_churn.png
+    ├── graph08_gender_vs_churn.png
+    ├── graph09_correlation_heatmap.png
+    ├── graph10_tenure_distribution.png
+    ├── graph11_contract_vs_monthly_charges.png
+    ├── graph12_internet_contract_churn.png
+    ├── graph13_tech_support_vs_churn.png
+    ├── graph14_online_security_vs_churn.png
+    ├── graph15_total_charges_vs_churn.png
+    ├── graph16_confusion_matrix.png
+    └── graph17_feature_importance.png
+```
+
+---
+
+# How to Run the Project
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/Mamta-codes/customer-churn-prediction.git
+```
 
 ### 2. Install Required Libraries
-
-Install the required Python libraries:
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn joblib openpyxl
 ```
 
-### 3. Run the Python Script
-
-Run the main Python file:
+### 3. Run Project
 
 ```bash
 python churn_prediction.py
 ```
 
-### 4. View the Results
-
-The program will:
-
-* Perform data preprocessing.
-* Train machine learning models.
-* Evaluate model performance.
-* Display classification metrics.
-* Generate visualizations.
-* Save the trained model.
-* Make customer churn predictions.
-
 ---
 
-## Project Structure
+# Conclusion
 
-```text
-PROJECT 2
-│
-├── churn_prediction.py
-├── final_insights.txt
-├── churn_model.pkl
-├── README.md
-│
-└── visualizations
-    └── top_10_feature_importance.png
-```
+This project demonstrates an end-to-end machine learning workflow for customer churn prediction.
 
----
+The project covers:
 
-## Conclusion
+* Data cleaning
+* Exploratory data analysis
+* Feature engineering
+* Machine learning model building
+* Model evaluation
+* Feature importance analysis
+* Model saving and prediction
 
-This project demonstrates how machine learning can be used to predict customer churn and identify factors associated with customer retention.
-
-Among the tested models, Logistic Regression achieved the best performance with approximately **80.67% accuracy**. The analysis also highlighted the importance of contract type, dependents, internet service, online security, and technical support in churn prediction.
-
-The project combines **data analysis, visualization, machine learning, model evaluation, and model deployment basics** into a complete end-to-end customer churn prediction workflow.
+The Logistic Regression model achieved the best performance with **80.67% accuracy**, providing useful insights into customer behavior and churn factors.
