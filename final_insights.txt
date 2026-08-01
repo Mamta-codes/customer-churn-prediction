@@ -1,0 +1,28 @@
+# FINAL BUSINESS INSIGHTS
+
+1. Overall Customer Churn
+   26.58% of customers have churned, while 73.42% have remained with the company.
+   This indicates that approximately one-fourth of the customer base is at risk of churn.
+
+2. Contract Type
+   Contract type is an important factor in churn prediction. 
+   Customers with one-year and two-year contracts show a lower tendency to churn compared with customers on month-to-month contracts.
+
+3. Dependents
+   Customers with dependents show a lower tendency to churn according to the Logistic Regression model.
+
+4. Internet Service
+   Fiber optic internet service is associated with a higher churn tendency in the model, 
+   making it a factor that may require further investigation.
+
+5. Online Security and Tech Support
+   Customers with Online Security and Tech Support show a lower tendency to churn, 
+   suggesting that additional support and security services may contribute to better customer retention.
+
+6. Model Performance
+   Among the tested machine learning models, 
+   Logistic Regression achieved the highest accuracy of approximately 80.67% and was selected as the final model.
+
+7. Final Prediction System
+   The trained Logistic Regression model was successfully saved using Joblib and 
+   loaded again to make predictions for individual customers.
