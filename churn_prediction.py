@@ -56,7 +56,7 @@ sns.countplot(x="Churn Label" , data=df)
 plt.title("Customer Churn Distribution")
 plt.xlabel("Churn")
 plt.ylabel("Number of customers")
-plt.savefig("visualizations/graph1_churn_distribution.png", dpi=300, bbox_inches="tight")
+plt.savefig("visualizations/graph01_churn_distribution.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 # QUICK CHEAT SHEET
@@ -75,7 +75,7 @@ sns.countplot(x="Contract", hue="Churn Label", data=df)
 plt.title("Churn Distribution by Contract Type")
 plt.xlabel("Contract Type")
 plt.ylabel("Number of Customers")
-plt.savefig("visualizations/graph2_contract_vs_churn.png", dpi=300, bbox_inches="tight")
+plt.savefig("visualizations/graph02_contract_vs_churn.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 # Does the type of internet service affect customer churn?
@@ -84,7 +84,7 @@ sns.countplot(x="Internet Service", hue="Churn Label", data=df)
 plt.title("Churn Distribution by Internet Service")
 plt.xlabel("Internet Service")
 plt.ylabel("Number of Customers")
-plt.savefig("visualizations/graph3_internet_service_vs_churn.png", dpi=300, bbox_inches="tight")
+plt.savefig("visualizations/graph03_internet_service_vs_churn.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 # Do customers who have been with the company for a longer time churn less?
@@ -93,7 +93,7 @@ sns.boxplot(x="Churn Label" , y="Tenure Months" , data=df)
 plt.title("Tenure Months vs Customer Churn")
 plt.xlabel("Churn")
 plt.ylabel("Tenure Months")
-plt.savefig("visualizations/graph4_tenure_vs_churn.png", dpi=300, bbox_inches="tight")
+plt.savefig("visualizations/graph04_tenure_vs_churn.png", dpi=300, bbox_inches="tight")
 plt.close()
 # THIS STATE THAT CHURNED CUSTOMER HAVE LOWER TENURE
 
@@ -104,7 +104,7 @@ sns.boxplot(x="Churn Label", y="Monthly Charges", data=df)
 plt.title("Monthly Charges vs Customer Churn")
 plt.xlabel("Churn")
 plt.ylabel("Monthly Charges")
-plt.savefig("visualizations/graph5_monthly_charges_vs_churn.png", dpi=300, bbox_inches="tight")
+plt.savefig("visualizations/graph05_monthly_charges_vs_churn.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 # Does the payment method affect customer churn?
@@ -116,7 +116,7 @@ plt.xlabel("Payment Method")
 plt.ylabel("Number of Customers")
 
 plt.xticks(rotation=20)
-plt.savefig("visualizations/graph6_payment_method_vs_churn.png", dpi=300, bbox_inches="tight")
+plt.savefig("visualizations/graph06_payment_method_vs_churn.png", dpi=300, bbox_inches="tight")
 
 plt.close()
 
@@ -127,7 +127,7 @@ sns.countplot(x="Senior Citizen" , hue= "Churn Label" , data=df)
 plt.title("Churn Distribution by Senior Citizen")
 plt.xlabel("Senior Citizen")
 plt.ylabel("Number of Customers")
-plt.savefig("visualizations/graph7_senior_citizen_vs_churn.png", dpi=300, bbox_inches="tight")
+plt.savefig("visualizations/graph07_senior_citizen_vs_churn.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 churn_rate = pd.crosstab(df["Senior Citizen"], df["Churn Label"], normalize="index") * 100
@@ -143,7 +143,7 @@ plt.title("Churn Distribution by Gender")
 plt.xlabel("Gender")
 plt.ylabel("Number of Customers")
 
-plt.savefig("visualizations/graph8_gender_vs_churn.png", dpi=300, bbox_inches="tight")
+plt.savefig("visualizations/graph08_gender_vs_churn.png", dpi=300, bbox_inches="tight")
 
 plt.close()
 
@@ -167,7 +167,7 @@ sns.heatmap(corr, annot=True, cmap="coolwarm", fmt=".2f")
 
 plt.title("Correlation Heatmap")
 
-plt.savefig("visualizations/graph9_correlation_heatmap.png", dpi=300, bbox_inches="tight")
+plt.savefig("visualizations/graph09_correlation_heatmap.png", dpi=300, bbox_inches="tight")
 
 plt.close()
 
