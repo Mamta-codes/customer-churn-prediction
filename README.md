@@ -203,7 +203,7 @@ Top important features include:
 
 Detailed analysis and business recommendations are available here:
 
-➡️ [View Final Business Insights](final_insights.md)
+➡️ [View Final Business Insights](FINAL_INSIGHTS.md)
 
 Main findings:
 
